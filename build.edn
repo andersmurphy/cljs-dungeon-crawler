@@ -4,5 +4,5 @@
  :target :bundle
  :bundle-cmd
  {:none ["npx" "webpack" "./out/index.js" "-o" "./out" "--mode=development"]
-  :default ["npx" "webpack" "./out/index.js" "-o" "./out"]}
+  :default ["npx" "webpack" "./out/index.js" "-o" "./docs"]}
  :closure-defines {cljs.core/*global* "window"}} ;; needed for advanced

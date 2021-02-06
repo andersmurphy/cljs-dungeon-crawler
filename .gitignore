@@ -9,3 +9,4 @@
 *.lsp
 *.clj-kondo
 /node_modules/
+/out/

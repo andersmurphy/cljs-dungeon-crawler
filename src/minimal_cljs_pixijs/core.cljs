@@ -1,3 +1,3 @@
 (ns minimal-cljs-pixijs.core)
 
-(js/console.log "Hello there world!")
+(js/alert "Hello there world!")
