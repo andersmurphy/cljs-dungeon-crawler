@@ -10,3 +10,14 @@
 *.clj-kondo
 /node_modules/
 /out/
+/docs/cljs/
+/docs/cljs_deps.js
+/docs/cljsc_opts.edn
+/docs/clojure/
+/docs/goog/
+/docs/index.js
+/docs/inferred_externs.js
+/docs/minimal_cljs_pixijs/
+/docs/npm_deps.js
+/docs/process/
+/docs/main.js.LICENSE.txt

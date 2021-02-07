@@ -1,2 +1,10 @@
-{:deps {org.clojure/clojurescript {:mvn/version "1.10.758"}
-        github-mfikes/cljs-eval {:git/url "https://gist.github.com/mfikes/66a120e18b75b6f4a3ecd0db8a976d84" :sha "542208abcc4b77c90300d70e9ebd7a89d88fe460"}}}
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojurescript {:mvn/version "1.10.758"}}
+ :aliases
+ {:dev {:main-opts ["-m"  "cljs.main"
+                    "-co" "build.edn"
+                    "-v" "-c" "-r"]}
+  :prod {:main-opts ["-m"  "cljs.main"
+                     "-co" "build.edn"
+                     "-O" "advanced"
+                     "-v" "-c"]}}}

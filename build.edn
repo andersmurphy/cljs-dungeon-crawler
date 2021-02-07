@@ -1,8 +1,8 @@
 {:main minimal-cljs-pixijs.core
- :output-to "out/index.js"
- :output-dir "out"
+ :output-to "docs/index.js"
+ :output-dir "docs"
  :target :bundle
  :bundle-cmd
- {:none ["npx" "webpack" "./out/index.js" "-o" "./out" "--mode=development"]
-  :default ["npx" "webpack" "./out/index.js" "-o" "./docs"]}
+ {:none ["npx" "webpack" "./docs/index.js" "-o" "./docs" "--mode=development"]
+  :default ["npx" "webpack" "./docs/index.js" "-o" "./docs"]}
  :closure-defines {cljs.core/*global* "window"}} ;; needed for advanced
