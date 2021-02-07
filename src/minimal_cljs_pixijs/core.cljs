@@ -16,4 +16,4 @@
            (* 0.1 delta))))
 
 (.add (.-ticker app) rotate-egg)
-(.remove (.-ticker app) rotate-egg)
+;; (.remove (.-ticker app) rotate-egg)

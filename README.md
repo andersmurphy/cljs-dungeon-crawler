@@ -2,14 +2,14 @@
 
 Start repl:
 
-`clojure -m cljs.main -co build.edn -v -c -r`
+`clojure -M:dev`
 
 ## Deploy
 
 Production build:
 
-`clojure -m cljs.main -co build.edn -O advanced -v -c`
+`clojure -M:prod`
 
 Push changes and the project will deploy automatically to:
 
-file:///Users/andersmurphy/projects/minimal-cljs-pixijs/docs/index.html
+https://andersmurphy.github.io/minimal-cljs-pixijs/
