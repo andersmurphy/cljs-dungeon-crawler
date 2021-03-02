@@ -1,26 +1,26 @@
 (ns minimal-cljs-pixijs.core
-  (:require [pixi.js :as px]))
+  (:require [pixi.js :as px]
+            [minimal-cljs-pixijs.sprites :as sprites]))
 
 ;; (set! *warn-on-infer* true)
 
-(def ^js app (px/Application. #js {:backgroundColor 0x1099bb}))
+(def ^js app (px/Application.
+              #js {:width       256
+                   :height      256
+                   :antialias   true
+                   :transparent false
+                   :resolution  1}))
 (-> js/document .-body (.appendChild (. app -view)))
 
-(defn texture-for [resource-name]
-  (let [^js r (-> app .-loader .-resources (aget resource-name))]
-    (.-texture r)))
-
-(defn rotate-egg [^js egg delta]
-  (set! (.-rotation egg)
-        (+ (.-rotation egg)
-           (* 0.1 delta))))
+(defn rotate-block [^js egg delta]
+  (set! (.-rotation egg) (+ (.-rotation egg) (* 0.1 delta))))
 
 (defn setup []
-  (let [^js egg (px/Sprite. (texture-for "assets/eggHead.png"))]
-    (-> egg .-anchor (.set 0.5))
-    (set! (.-x egg) (/ (-> app .-screen .-width) 2))
-    (set! (.-y egg) (/ (-> app .-screen .-height) 2))
-    (-> app .-ticker (.add (partial rotate-egg egg)))
-    (-> app .-stage (.addChild egg))))
+  (let [^js sheet (-> app .-loader .-resources (aget "resources/spritesheet.json"))
+        ^js block (px/Sprite. (sprites/texture-for sheet :wall_left))]
+    (set! (.-x block) (/ (-> app .-screen .-width) 2))
+    (set! (.-y block) (/ (-> app .-screen .-height) 2))
+    (-> app .-ticker (.add (partial rotate-block block)))
+    (-> app .-stage (.addChild block))))
 
-(-> app .-loader (.add "assets/eggHead.png") (.load setup))
+(-> app .-loader (.add "resources/spritesheet.json") (.load setup))

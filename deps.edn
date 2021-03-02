@@ -1,6 +1,11 @@
 {:deps {org.clojure/clojurescript {:mvn/version "1.10.758"}}
  :aliases
- {:dev {:main-opts  ["--main"          "cljs.main"
+ {:build
+  {:extra-paths ["build"]
+   :main-opts ["-m" "package-resources"]
+   :extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
+                org.clojure/data.json {:mvn/version "1.0.0"}}}
+  :dev {:main-opts  ["--main"          "cljs.main"
                      "--compile-opts"  "build.edn"
                      "--compile" "--repl"]}
   :prod {:main-opts ["--main"          "cljs.main"

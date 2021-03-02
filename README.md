@@ -2,13 +2,13 @@
 
 Start repl:
 
-`clojure -M:dev`
+`clojure -A:build; clojure -M:dev`
 
 ## Deploy
 
 Production build:
 
-`clojure -M:prod`
+`clojure -A:build; clojure -M:prod`
 
 Push changes and the project will deploy automatically to:
 
