@@ -16,8 +16,7 @@
   (set! (.-rotation egg) (+ (.-rotation egg) (* 0.1 delta))))
 
 (defn setup []
-  (let [^js sheet (-> app .-loader .-resources (aget "resources/spritesheet.json"))
-        ^js block (px/Sprite. (sprites/texture-for sheet :wall_left))]
+  (let [^js block (px/Sprite. (sprites/texture-for app :wall_left))]
     (set! (.-x block) (/ (-> app .-screen .-width) 2))
     (set! (.-y block) (/ (-> app .-screen .-height) 2))
     (-> app .-ticker (.add (partial rotate-block block)))
