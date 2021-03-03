@@ -12,8 +12,8 @@
                    :resolution  1}))
 (-> js/document .-body (.appendChild (. app -view)))
 
-(defn rotate-block [^js egg delta]
-  (set! (.-rotation egg) (+ (.-rotation egg) (* 0.1 delta))))
+(defn rotate-block [^js block delta]
+  (set! (.-rotation block) (+ (.-rotation block) (* 0.1 delta))))
 
 (defn setup []
   (let [^js block (px/Sprite. (sprites/texture-for :wall_left))]
