@@ -213,7 +213,5 @@
   (let [resolved-k (if (symbol? k) @(resolve 'k) k)]
     (assert (sprite-keys resolved-k)
             (str resolved-k " is not a valid sprite key.")))
-  (let [k-string (-> k name str)
-        r (with-meta (gensym "r") {:tag 'js})]
-    `(let [~r (-> minimal-cljs-pixijs.core/app .-loader .-resources (aget "resources/spritesheet.json"))]
-       (-> ~r .-textures (aget ~k-string)))))
+  (let [k-string (-> k name str)]
+    `(-> (get-sheet minimal-cljs-pixijs.core/app) .-textures (aget ~k-string))))
