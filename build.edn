@@ -1,4 +1,4 @@
-{:main minimal-cljs-pixijs.core
+{:main cljs-dungeon-crawler.core
  :output-to "docs/index.js"
  :output-dir "docs"
  :target :bundle

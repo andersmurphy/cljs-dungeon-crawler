@@ -1,4 +1,4 @@
-(ns minimal-cljs-pixijs.sprites)
+(ns cljs-dungeon-crawler.sprites)
 
 (def spritesheet
   {:meta {:image "spritesheet.png"
@@ -214,4 +214,4 @@
     (assert (sprite-keys resolved-k)
             (str resolved-k " is not a valid sprite key.")))
   (let [k-string (-> k name str)]
-    `(-> (get-sheet minimal-cljs-pixijs.core/app) .-textures (aget ~k-string))))
+    `(-> (get-sheet cljs-dungeon-crawler.core/app) .-textures (aget ~k-string))))

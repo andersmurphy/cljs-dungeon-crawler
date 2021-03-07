@@ -1,6 +1,6 @@
 (ns package-resources
   (:require [clojure.data.json :as json]
-            [minimal-cljs-pixijs.sprites :as sprites]))
+            [cljs-dungeon-crawler.sprites :as sprites]))
 
 (defn -main []
   (->> sprites/spritesheet
