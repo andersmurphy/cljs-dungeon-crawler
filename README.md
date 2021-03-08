@@ -12,4 +12,4 @@ Production build:
 
 Push changes and the project will deploy automatically to:
 
-https://andersmurphy.github.io/minimal-cljs-pixijs/
+https://andersmurphy.github.io/cljs-dungeon-crawler/
