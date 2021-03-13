@@ -1,5 +1,9 @@
 ## Local Development
 
+Install dependencies:
+
+`npm install`
+
 Start repl:
 
 `clojure -A:build; clojure -M:dev`
