@@ -2,7 +2,7 @@
 
 Install dependencies:
 
-`npm install`
+`yarn install`
 
 Start repl:
 
