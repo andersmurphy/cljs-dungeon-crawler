@@ -5,6 +5,6 @@
  ;; :pseudo-names true
  ;; :pretty-print true
  :bundle-cmd
- {:none ["npx" "webpack" "./docs/index.js" "-o" "./docs" "--mode=development"]
-  :default ["npx" "webpack" "./docs/index.js" "-o" "./docs"]}
+ {:none ["yarn" "webpack" "./docs/index.js" "-o" "./docs" "--mode=development"]
+  :default ["yarn" "webpack" "./docs/index.js" "-o" "./docs"]}
  :closure-defines {cljs.core/*global* "window"}} ;; needed for advanced
